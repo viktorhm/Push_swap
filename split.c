@@ -1,6 +1,19 @@
 
 #include "push_swap.h"
 
+int ft_strlen(char const *str)
+{
+	int i;
+	i = 0 ;
+	while(str[i])
+	{
+		i++;
+
+	}
+
+return (i);
+}
+
 static int	nb_mots(const char *str, char c)
 {
 	int	i;
@@ -62,3 +75,4 @@ char	**ft_split(char const *s, char c)
 	lst[j] = 0;
 	return (lst);
 }
+
