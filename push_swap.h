@@ -3,6 +3,7 @@
 
 #include <unistd.h>
 #include <stdlib.h>
+#include <stdio.h>
 
 typedef struct s_node
 {
@@ -14,8 +15,19 @@ typedef struct s_node
 
 long int	ft_atoi(const char *str );
 char	**ft_split(char const *s, char c);
-void init_stack(t_node **a , char **argv );
+t_node *find_last_node(t_node *stack);
+void add_node(t_node **stack , int nbr);
+int error_char(char *argv);
+int not_repet(int nbr , t_node *a);
+int init_stack(t_node **a , char **argv, int leak );
+int print_node(t_node *stack);
+void free_stack(t_node *stack);
+
+int sa(t_node *head);
+int sb(t_node *head);
+int ss(t_node *a , t_node*b);
 
 
-
+void pa(t_node **a , t_node **b);
+void pb(t_node **a , t_node **b);
 #endif
