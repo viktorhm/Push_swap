@@ -6,7 +6,7 @@
 /*   By: vharatyk <vharatyk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 12:59:06 by vharatyk          #+#    #+#             */
-/*   Updated: 2024/01/02 19:19:52 by vharatyk         ###   ########.fr       */
+/*   Updated: 2024/01/08 16:20:20 by vharatyk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ int main (int argc , char *argv[])
 	else
 		nb_value = init_stack(&a , argv + 1 , 0 );
 
-	
+
 	if(nb_value != 0)
 	{
 		print_node(a);
@@ -82,11 +82,11 @@ int main (int argc , char *argv[])
 		{
 			sa(&a);
 		}
-		else if(nb_value = 3 && ordenar(a ,nb_value))
+		else if(nb_value == 3 && ordenar(a ,nb_value))
 		{
 			little_sort(&a);
 		}
-		else 
+		else
 		{
 		while(ordenar(a ,nb_value) )
 		{
@@ -101,7 +101,8 @@ int main (int argc , char *argv[])
 		free_stack(a);
 		free_stack(b);
 	}
-	
+
+
 	return(0);
 }
 

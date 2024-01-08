@@ -6,11 +6,11 @@
 /*   By: vharatyk <vharatyk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 13:45:51 by vharatyk          #+#    #+#             */
-/*   Updated: 2023/12/21 07:55:11 by vharatyk         ###   ########.fr       */
+/*   Updated: 2024/01/08 16:42:42 by vharatyk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
+#include<stdio.h>
 #include"push_swap.h"
 
 
@@ -28,8 +28,6 @@ void free_stack(t_node *stack)
 	}
 	stack = NULL;
 }
-
-
 
 
 t_node *find_last_node(t_node *stack)
@@ -71,15 +69,31 @@ void add_node(t_node **stack , int nbr)
 
 int error_char(char *argv)
 {
+
 	int i;
+	int j;
 	i = 0 ;
+	j = 0;
+
 	while(argv[i])
 	{
-		if(argv[i] > '0' && argv[i] < '9')
-			return(0);
+		printf("]]%c[[",argv[i]);
+		if((argv[i] > '0' && argv[i] <= '9' ))
+			i++;
+		else if (argv[0] == '-')
+		{
+			if(argv[1] > '0' && argv[1] <= '9' )
+				i++;
+			else
+				return(1);
+		}
+
 		else
 			return(1);
+
 	}
+	printf("\n");
+	return(0);
 
 }
 
@@ -100,22 +114,29 @@ int not_repet(int nbr , t_node *a)
 
 int init_stack(t_node **a , char **argv, int leak )
 {
-	int  i = 0 ; int long nbr;
+	int  i = 0 ;
+	int long nbr;
+
 	while(argv[i])
 	{
 		if(error_char(argv[i]))
-			write(1,"char",4);
-
-		nbr = ft_atoi(argv[i]);
-		if(nbr > 2147483647 && nbr < -2147483648)
 		{
 			free_stack(*a);
+			write(1,"char",4);
+			return(0);
+		}
+		nbr = ft_atoi(argv[i]);
+		if(nbr > 2147483647 || nbr < -2147483648)
+		{
+			free_stack(*a);
+			write(1,"double",6);
 			return(0);
 
 		}
 		if(not_repet(nbr , *a))
 		{
 			free_stack(*a);
+			write(1,"repeat",6);
 			return(0);
 		}
 		else
