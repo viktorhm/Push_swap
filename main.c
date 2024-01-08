@@ -6,7 +6,7 @@
 /*   By: vharatyk <vharatyk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 12:59:06 by vharatyk          #+#    #+#             */
-/*   Updated: 2023/12/19 16:49:53 by vharatyk         ###   ########.fr       */
+/*   Updated: 2024/01/02 19:19:52 by vharatyk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,14 +31,20 @@ if(leak == 1)
 int ordenar(t_node *stack ,int nb_value)
 {
 	int min = stack->value;
-
+	int i = 0 ;
 	while (stack)
 	{
 	if (min <= stack->value)
+	{
+		min = stack->value;
+		i++;
 		stack = stack -> next;
-	else
-		return (1);
 	}
+	else
+		return(1);
+	}
+	if(i != nb_value)
+		return(1);
 	return(0);
 }
 
@@ -48,6 +54,7 @@ int main (int argc , char *argv[])
 	t_node *a;
 	t_node *b;
 	int nb_value;
+
 	a = NULL ;
 	b = NULL ;
 
@@ -65,24 +72,36 @@ int main (int argc , char *argv[])
 	else
 		nb_value = init_stack(&a , argv + 1 , 0 );
 
-	print_node(a);
-	print_node(b);
-
-	while(ordenar(a ,nb_value))
+	
+	if(nb_value != 0)
 	{
-		printf("--not--");
-		break;
+		print_node(a);
+		print_node(b);
+
+		if(nb_value == 2 && ordenar(a ,nb_value))
+		{
+			sa(&a);
+		}
+		else if(nb_value = 3 && ordenar(a ,nb_value))
+		{
+			little_sort(&a);
+		}
+		else 
+		{
+		while(ordenar(a ,nb_value) )
+		{
+			write(1,"--not--\n",8);
+			break;
+		}
+		}
+
+		print_node(a);
+		print_node(b);
+
+		free_stack(a);
+		free_stack(b);
 	}
-	sa(a);
-	pa(&a , &b);
-
-	print_node(a);
-	print_node(b);
-
-
-
-
-	free_stack(a);
+	
 	return(0);
 }
 

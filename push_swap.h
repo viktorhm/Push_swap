@@ -23,11 +23,18 @@ int init_stack(t_node **a , char **argv, int leak );
 int print_node(t_node *stack);
 void free_stack(t_node *stack);
 
-int sa(t_node *head);
-int sb(t_node *head);
-int ss(t_node *a , t_node*b);
-
-
+int sa(t_node **head);
+int sb(t_node **head);
+int ss(t_node **a , t_node **b);
 void pa(t_node **a , t_node **b);
 void pb(t_node **a , t_node **b);
+void ra (t_node **a);
+void rb (t_node **b);
+void rr (t_node **a ,t_node **b);
+void rra (t_node **a);
+void rrb (t_node **b);
+void rrr(t_node **a , t_node **b);
+
+void little_sort (t_node **a);
+
 #endif

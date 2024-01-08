@@ -6,7 +6,7 @@
 /*   By: vharatyk <vharatyk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 13:45:51 by vharatyk          #+#    #+#             */
-/*   Updated: 2023/12/19 15:29:17 by vharatyk         ###   ########.fr       */
+/*   Updated: 2023/12/21 07:55:11 by vharatyk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,7 +107,6 @@ int init_stack(t_node **a , char **argv, int leak )
 			write(1,"char",4);
 
 		nbr = ft_atoi(argv[i]);
-		printf("%ld ",nbr);
 		if(nbr > 2147483647 && nbr < -2147483648)
 		{
 			free_stack(*a);

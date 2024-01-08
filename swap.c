@@ -6,7 +6,7 @@
 /*   By: vharatyk <vharatyk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 18:37:17 by vharatyk          #+#    #+#             */
-/*   Updated: 2023/12/19 15:24:18 by vharatyk         ###   ########.fr       */
+/*   Updated: 2024/01/02 16:29:25 by vharatyk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,35 +15,34 @@
 
 
 //sa ntervertit les 2 premiers éléments au sommet de la pile a.Ne fait rien s’il n’y en a qu’un ou aucun.
-int swap(t_node *head)
+int swap(t_node **head)
 {
 
-	if(head == NULL || head->next == NULL )
+	if((*head) == NULL || (*head)->next == NULL )
 		return(1);
 
 	long fiste ;
 	long second;
 
-	fiste = head->value;
-	second = head->next->value;
+	fiste = (*head)->value;
+	second = (*head)->next->value;
 
-	head->next->value = fiste ;
-	head->value = second ;
-
+	(*head)->next->value = fiste ;
+	(*head)->value = second ;
 
 }
 
-int sa(t_node *a)
+int sa(t_node **a)
 {
 	swap(a);
 	write(1,"sa\n",3);
 }
-int sb(t_node *b)
+int sb(t_node **b)
 {
 	swap(b);
 	write(1,"sb\n",3);
 }
-int ss(t_node *a , t_node*b)
+int ss(t_node **a , t_node **b)
 {
 	swap(a);
 	swap(b);
