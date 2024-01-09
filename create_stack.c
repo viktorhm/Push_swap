@@ -6,7 +6,7 @@
 /*   By: vharatyk <vharatyk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 13:45:51 by vharatyk          #+#    #+#             */
-/*   Updated: 2024/01/08 16:42:42 by vharatyk         ###   ########.fr       */
+/*   Updated: 2024/01/09 15:20:37 by vharatyk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ int error_char(char *argv)
 	while(argv[i])
 	{
 		printf("]]%c[[",argv[i]);
-		if((argv[i] > '0' && argv[i] <= '9' ))
+		if((argv[i] >= '0' && argv[i] <= '9' ))
 			i++;
 		else if (argv[0] == '-')
 		{
@@ -151,7 +151,7 @@ int print_node(t_node *stack)
 
 while(stack)
 {
-	printf("node nbr->%d , ", stack->value);
+	printf("%d->%d , ",stack->current_position, stack->value);
 	stack = stack->next;
 
 }

@@ -6,7 +6,7 @@
 /*   By: vharatyk <vharatyk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 12:59:06 by vharatyk          #+#    #+#             */
-/*   Updated: 2024/01/08 16:20:20 by vharatyk         ###   ########.fr       */
+/*   Updated: 2024/01/09 15:21:34 by vharatyk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,6 +94,7 @@ int main (int argc , char *argv[])
 			break;
 		}
 		}
+		init_pos_mediane(a);
 
 		print_node(a);
 		print_node(b);

@@ -8,7 +8,6 @@ int ft_strlen(char const *str)
 	while(str[i])
 	{
 		i++;
-
 	}
 
 return (i);

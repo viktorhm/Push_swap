@@ -8,6 +8,8 @@
 typedef struct s_node
 {
 	int value ;
+	int current_position ;
+	int mediane ;
 	struct s_node *next;
 	struct s_node *prev;
 
@@ -22,6 +24,8 @@ int not_repet(int nbr , t_node *a);
 int init_stack(t_node **a , char **argv, int leak );
 int print_node(t_node *stack);
 void free_stack(t_node *stack);
+int len_stack(t_node *stack);
+void init_pos_mediane( t_node *stack);
 
 int sa(t_node **head);
 int sb(t_node **head);
