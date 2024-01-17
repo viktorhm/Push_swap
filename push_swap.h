@@ -18,6 +18,9 @@ typedef struct s_node
 
 }t_node;
 
+
+
+
 long int	ft_atoi(const char *str );
 char	**ft_split(char const *s, char c);
 t_node *find_last_node(t_node *stack);
@@ -29,6 +32,13 @@ int print_node(t_node *stack);
 void free_stack(t_node *stack);
 int len_stack(t_node *stack);
 void init_pos_mediane( t_node *stack);
+void finish_rotation(t_node **stack , t_node *top_node , char stack_name);
+void push_swap(t_node **a, t_node **b);
+void set_price(t_node *a , t_node *b);
+void set_min(t_node *b);
+void init_nodes(t_node *a , t_node *b);
+t_node  *find_small(t_node *node);
+t_node *return_cheapest(t_node *node);
 
 int sa(t_node **head);
 int sb(t_node **head);

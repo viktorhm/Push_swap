@@ -6,7 +6,7 @@
 /*   By: vharatyk <vharatyk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 15:33:37 by vharatyk          #+#    #+#             */
-/*   Updated: 2024/01/17 15:47:42 by vharatyk         ###   ########.fr       */
+/*   Updated: 2024/01/17 18:23:13 by vharatyk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,8 +72,8 @@ void set_price(t_node *a , t_node *b)
 	int len_a;
 	int len_b;
 
-	len_a = stack_len(a);
-	len_b = stack_len(b);
+	len_a = len_stack(a);
+	len_b = len_stack(b);
 
 	while(b)
 	{

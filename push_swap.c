@@ -6,11 +6,31 @@
 /*   By: vharatyk <vharatyk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 18:37:17 by vharatyk          #+#    #+#             */
-/*   Updated: 2024/01/17 16:59:45 by vharatyk         ###   ########.fr       */
+/*   Updated: 2024/01/17 18:33:24 by vharatyk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"push_swap.h"
+
+static void rotate_both(t_node **a , t_node **b , t_node *min)
+{
+
+while(*a != min->target && *b != min)
+	rr(a,b);
+init_pos_mediane(*a);
+init_pos_mediane(*b);
+
+}
+
+static void reverse_rotate_both(t_node **a , t_node **b , t_node *min)
+{
+while(*a != min->target && *b != min)
+	rrr(a,b);
+init_pos_mediane(*a);
+init_pos_mediane(*b);
+
+}
+
 
 
 
@@ -55,7 +75,7 @@ static void	move_node(t_node **a, t_node **b)
 
 
 
-push_swap(t_node **a, t_node **b)
+void push_swap(t_node **a, t_node **b)
 {
 
 	t_node *small ;
