@@ -6,7 +6,7 @@
 /*   By: vharatyk <vharatyk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 19:12:32 by vharatyk          #+#    #+#             */
-/*   Updated: 2024/01/02 19:18:16 by vharatyk         ###   ########.fr       */
+/*   Updated: 2024/01/17 17:02:44 by vharatyk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 Décale d’une position vers le bas tous les élements de
 la pile a. Le dernier élément devient le premier
 */
+
 static void reverse_rotate(t_node ** stack)
 {
     t_node *last_node ;

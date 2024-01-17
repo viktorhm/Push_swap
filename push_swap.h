@@ -10,6 +10,9 @@ typedef struct s_node
 	int value ;
 	int current_position ;
 	int mediane ;
+	int push_price;
+	int min ;
+	struct s_node *target ;
 	struct s_node *next;
 	struct s_node *prev;
 

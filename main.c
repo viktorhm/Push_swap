@@ -6,7 +6,7 @@
 /*   By: vharatyk <vharatyk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 12:59:06 by vharatyk          #+#    #+#             */
-/*   Updated: 2024/01/09 15:21:34 by vharatyk         ###   ########.fr       */
+/*   Updated: 2024/01/15 18:03:43 by vharatyk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,21 +79,15 @@ int main (int argc , char *argv[])
 		print_node(b);
 
 		if(nb_value == 2 && ordenar(a ,nb_value))
-		{
 			sa(&a);
-		}
+
 		else if(nb_value == 3 && ordenar(a ,nb_value))
-		{
 			little_sort(&a);
-		}
+
 		else
-		{
-		while(ordenar(a ,nb_value) )
-		{
-			write(1,"--not--\n",8);
-			break;
-		}
-		}
+			push_swap(&a , &b);
+
+
 		init_pos_mediane(a);
 
 		print_node(a);
