@@ -6,7 +6,7 @@
 /*   By: vharatyk <vharatyk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 18:37:17 by vharatyk          #+#    #+#             */
-/*   Updated: 2024/01/02 16:29:25 by vharatyk         ###   ########.fr       */
+/*   Updated: 2024/01/19 16:32:30 by vharatyk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,20 +29,20 @@ int swap(t_node **head)
 
 	(*head)->next->value = fiste ;
 	(*head)->value = second ;
-
+	return(0);
 }
 
-int sa(t_node **a)
+void sa(t_node **a)
 {
 	swap(a);
 	write(1,"sa\n",3);
 }
-int sb(t_node **b)
+void sb(t_node **b)
 {
 	swap(b);
 	write(1,"sb\n",3);
 }
-int ss(t_node **a , t_node **b)
+void ss(t_node **a , t_node **b)
 {
 	swap(a);
 	swap(b);

@@ -6,7 +6,7 @@
 /*   By: vharatyk <vharatyk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 19:12:44 by vharatyk          #+#    #+#             */
-/*   Updated: 2024/01/02 19:18:38 by vharatyk         ###   ########.fr       */
+/*   Updated: 2024/01/19 15:15:44 by vharatyk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void ra (t_node **a)
 void rb (t_node **b)
 {
   rotate(b);
-    write(1,"ra\n",3);
+    write(1,"rb\n",3);
 }
 
 void rr (t_node **a ,t_node **b)

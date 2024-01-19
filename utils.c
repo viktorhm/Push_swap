@@ -6,11 +6,15 @@
 int len_stack(t_node *stack)
 {
 	int i = 0 ;
+	if(NULL == stack)
+		return(0);
 	while(stack)
 	{
-		stack = stack->next ;
 		i++;
+		stack = stack->next ;
+
 	}
+	return(i);
 }
 
 t_node  *find_small(t_node *node)
@@ -21,7 +25,7 @@ t_node  *find_small(t_node *node)
 
 	if(NULL == node)
 		return(NULL);
-	smallest = __LONG_MAX__;
+	smallest = LONG_MAX;
 
 	while(node)
 	{
@@ -32,7 +36,7 @@ t_node  *find_small(t_node *node)
 		}
 		node = node ->next ;
 	}
-	retun(smallest_node);
+	return(smallest_node);
 
 }
 
@@ -43,12 +47,9 @@ t_node *return_cheapest(t_node *node)
 		return(NULL);
 	while(node)
 	{
-
 		if(node->min)
 			return(node);
 		node = node->next;
 	}
-
 	return(NULL);
-
 }

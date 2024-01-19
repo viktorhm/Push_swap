@@ -6,13 +6,13 @@
 /*   By: vharatyk <vharatyk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 12:59:06 by vharatyk          #+#    #+#             */
-/*   Updated: 2024/01/15 18:03:43 by vharatyk         ###   ########.fr       */
+/*   Updated: 2024/01/19 17:23:54 by vharatyk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"push_swap.h"
 
-int free_argv(char **argv  ,int leak)
+void free_argv(char **argv  ,int leak)
 {
 int i = 0 ;
 int j = 0 ;
@@ -75,9 +75,6 @@ int main (int argc , char *argv[])
 
 	if(nb_value != 0)
 	{
-		print_node(a);
-		print_node(b);
-
 		if(nb_value == 2 && ordenar(a ,nb_value))
 			sa(&a);
 
@@ -87,15 +84,10 @@ int main (int argc , char *argv[])
 		else
 			push_swap(&a , &b);
 
-
-		init_pos_mediane(a);
-
-		print_node(a);
-		print_node(b);
-
 		free_stack(a);
 		free_stack(b);
 	}
+
 
 
 	return(0);

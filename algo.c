@@ -6,7 +6,7 @@
 /*   By: vharatyk <vharatyk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 18:37:17 by vharatyk          #+#    #+#             */
-/*   Updated: 2024/01/17 18:33:24 by vharatyk         ###   ########.fr       */
+/*   Updated: 2024/01/19 16:33:34 by vharatyk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ static void rotate_both(t_node **a , t_node **b , t_node *min)
 
 while(*a != min->target && *b != min)
 	rr(a,b);
-init_pos_mediane(*a);
-init_pos_mediane(*b);
+init_pos(*a);
+init_pos(*b);
 
 }
 
@@ -26,8 +26,8 @@ static void reverse_rotate_both(t_node **a , t_node **b , t_node *min)
 {
 while(*a != min->target && *b != min)
 	rrr(a,b);
-init_pos_mediane(*a);
-init_pos_mediane(*b);
+init_pos(*a);
+init_pos(*b);
 
 }
 
@@ -84,20 +84,22 @@ void push_swap(t_node **a, t_node **b)
 
 	len_a = len_stack(*a);
 	if(len_a == 5)
-		hand_five(a,b);
+	{
+		littel_five(a,b);
+	}
 	else
 	{
 		while(len_a-- > 3)
 			pb(b , a);
 	}
-	tiny_sort(a);
+	little_sort(a);
 	while(*b)
 	{
-		init_node(a, b);
+		init_nodes(*a, *b);
 		move_node(a,b);
 	}
-	set_current_position(*a);
-	small = find_smallest(*a);
+	init_pos(*a);
+	small = find_small(*a);
 	if(small->mediane)
 		while(*a != small)
 			ra(a);

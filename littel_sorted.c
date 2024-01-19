@@ -26,3 +26,15 @@ else if((*stack)->next->value == max_high)
 if((*stack)->value > (*stack)->next->value)
     sa(stack);
 }
+
+
+void    littel_five(t_node **a , t_node **b)
+{
+    while(len_stack(*a) > 3)
+        {
+            init_nodes(*a , *b);
+            finish_rotation(a,find_small(*a), 'a');
+            pb(b , a);
+        }
+
+}

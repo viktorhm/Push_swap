@@ -6,7 +6,7 @@
 /*   By: vharatyk <vharatyk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 15:33:37 by vharatyk          #+#    #+#             */
-/*   Updated: 2024/01/17 18:23:13 by vharatyk         ###   ########.fr       */
+/*   Updated: 2024/01/19 11:37:44 by vharatyk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,25 @@
 
 
 
-void init_pos_mediane( t_node *stack)
+void init_pos(t_node *stack)
 {
+
 	if(stack == NULL)
 		return ;
+
 	int i = 0 ;
 	int mediane =0 ;
 
 	mediane  = len_stack(stack) / 2;
-
 	while(stack)
 	{
 	stack->current_position = i ;
 	if( i <= mediane )
-		stack->mediane = 1 ;
+		stack->mediane = true ;
 	else
-		stack->mediane = 0 ;
-
-	i++;
+		stack->mediane = false ;
 	stack = stack->next ;
-
+	i++;
 	}
 
 }
@@ -116,8 +115,8 @@ void set_min(t_node *b)
 
 void init_nodes(t_node *a , t_node *b)
 {
-	init_pos_mediane(a);
-	init_pos_mediane(b);
+	init_pos(a);
+	init_pos(b);
 	set_node(a,b);
 	set_price(a,b);
 	set_min(b);
