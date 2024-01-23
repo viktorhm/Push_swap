@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   algo.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vharatyk <vharatyk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 18:37:17 by vharatyk          #+#    #+#             */
-/*   Updated: 2024/01/19 16:33:34 by vharatyk         ###   ########.fr       */
+/*   Updated: 2024/01/20 10:46:38 by vharatyk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,14 +83,18 @@ void push_swap(t_node **a, t_node **b)
 
 
 	len_a = len_stack(*a);
+	printf("lena : %d }}",len_a);
 	if(len_a == 5)
 	{
 		littel_five(a,b);
 	}
 	else
 	{
-		while(len_a-- > 3)
+		while(len_a > 3)
+		{
+			len_a--;
 			pb(b , a);
+		}
 	}
 	little_sort(a);
 	while(*b)

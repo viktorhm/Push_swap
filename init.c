@@ -6,7 +6,7 @@
 /*   By: vharatyk <vharatyk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 15:33:37 by vharatyk          #+#    #+#             */
-/*   Updated: 2024/01/19 11:37:44 by vharatyk         ###   ########.fr       */
+/*   Updated: 2024/01/20 10:52:57 by vharatyk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,24 +39,24 @@ void init_pos(t_node *stack)
 
 static void set_node (t_node *a , t_node *b)
 {
-	t_node *tmp = a;
+	t_node *tmp_a = a;
 	t_node *target;
-	long	max;
+	long	best;
 
 	while(b)
 	{
-		max = 9223372036854775807;
-		tmp = a;
-		while(tmp)
+		best = LONG_MAX;
+		tmp_a = a;
+		while(tmp_a)
 		{
-			if(tmp->value > b->value && tmp->value < max)
+			if(tmp_a->value > b->value && tmp_a->value < best)
 				{
-					max  =  tmp->value;
-					target = tmp ;
+					best = tmp_a->value;
+					target = tmp_a;
 				}
-				tmp = tmp->next ;
+				tmp_a = tmp_a->next ;
 		}
-		if(9223372036854775807 == max)
+		if(LONG_MAX == best)
 			b->target = find_small(a);
 		else
 			b->target = target ;

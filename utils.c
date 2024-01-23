@@ -17,26 +17,44 @@ int len_stack(t_node *stack)
 	return(i);
 }
 
+static int find_max(t_node *node)
+{
+   int  max;
+
+	if(NULL == node)
+		return(NULL);
+	max = LONG_MAX;
+
+   while(node)
+   {
+    if(stack->value > max)
+        max = stack->value;
+    stack = stack->next ;
+   }
+   return(max);
+}
+
+
 t_node  *find_small(t_node *node)
 {
 
-	long	smallest;
+	long	min;
 	t_node *smallest_node;
 
 	if(NULL == node)
 		return(NULL);
-	smallest = LONG_MAX;
+	min = LONG_MAX;
 
 	while(node)
 	{
-		if(node->value < smallest)
+		if(node->value < min)
 		{
-			smallest = node->value ;
+			min = node->value ;
 			smallest_node =  node ;
 		}
 		node = node ->next ;
 	}
-	return(smallest_node);
+	return(smallest);
 
 }
 
